@@ -1,4 +1,4 @@
-st='Hello world'
+st='Mr Ding'
 rev=''
 
 for ch in st:
