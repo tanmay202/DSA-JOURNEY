@@ -1,12 +1,17 @@
-def SelSort(arr):
+def selection_Sort(arr):
     n=len(arr)
-    for i in range(n-1):
-        minIdx=i
+    for i in range(n-2):
+        min_idx=i
         for j in range(i+1,n):
-            if arr[j]<arr[minIdx]:
-                minIdx=j
-        if minIdx !=i:
-            arr[i],arr[minIdx]=arr[minIdx],arr[i]
-    return  arr
+            if arr[min_idx]>arr[j]:
+                min_idx=j
+        arr[i],arr[min_idx]=arr[min_idx],arr[i]
+    return arr
 
-print(SelSort(arr=[1,4,5,34,21,12]))
+
+
+
+
+a = [65, 23, 45, 12, 11]
+print(selection_Sort(a))
+    
