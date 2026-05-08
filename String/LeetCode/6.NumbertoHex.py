@@ -1,18 +1,18 @@
-class Solution:
-    def toHex(self, num: int) -> str:
-        if num == 0:
-            return "0"
+def NumToHex(n):
+    hex='0123456789ABCDEF'
+    result=''
+    if n==0:
+         return '0'
+    elif n<0 :
+        n+=2**32
+  
+    while n>0:
+            remainder=n%16
+            result=hex[remainder]+result
+            n//=16
+    return result
+    
 
-        # Handle negative numbers using 32-bit two's complement
-        if num < 0:
-            num += 2**32
+n=int(input("Enter a number:"))
 
-        hex_chars = "0123456789abcdef"
-        ans = ""
-
-        while num > 0:
-            rem = num % 16
-            ans = hex_chars[rem] + ans
-            num //= 16
-
-        return ans
+print("Hex number:",NumToHex(n))
